@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<span class="icon-bar"></span>
 				<span class="icon-bar"></span>
 			</button>
-			<a href="<?php echo base_url(); ?>"><img class="pull-left" src="<?php echo public_helper('upload/images/tahaco_logo.jpg') ?>" style="width: 70px;">
+			<a href="<?php echo base_url(); ?>"><img class="pull-left" src="<?php echo public_helper('upload/images/tahaco_logo.jpg') ?>" style="width: 70px;" alt="<?php echo $page_title; ?>">
 			<div class="pull-left">
 				<span class="logo_name"><?php echo $website->website_name; ?></span>
 				<div class="logo_phone"><span class="hotline_title">Hotline: </span><span class="hotline"><?php echo $website->hotline; ?></span></div>	</a>			
@@ -35,7 +35,10 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav navbar-right">
 				<li><a href="<?php echo base_url(); ?>"><b>TRANG CHỦ</b></a></li>
-				<li><a href="<?php echo base_url(); ?>vi-tri.html"><b>SẢN PHẨM</b></a></li>
+				<li><a href="<?php echo base_url(); ?>san-pham"><b>SẢN PHẨM</b></a></li>
+				<?php foreach ($categories as $key => $value) { ?>
+					<li><a href="<?php echo base_url('category/'.$value->id); ?>"><b><?php echo $value->name; ?></b></a></li>
+				<?php } ?>
 				<li><a href="<?php echo base_url(); ?>tin-tuc"><b>TIN TỨC</b></a></li>
 				<li><a href="<?php echo base_url(); ?>lien-he"><b>LIÊN HỆ</b></a></li>
 			</ul>

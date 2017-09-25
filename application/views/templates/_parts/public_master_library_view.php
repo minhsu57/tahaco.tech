@@ -18,11 +18,11 @@
     <!-- facebook share content -->
     <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
     <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="<?php echo $website->page_title; ?>" />
+    <meta property="og:title"              content="<?php echo $website->title; ?>" />
     <meta property="og:description"        content="<?php echo $website->meta_description; ?>" />
     <meta property="og:image"              content="<?php if(isset($website->image)) echo $website->image; else echo public_helper('upload/images/tahaco-banner-trang-chu-4.jpg'); ?>" />
 
-    <title><?php echo $website->page_title; ?></title>
+    <title><?php echo $website->title; ?></title>
     <!-- CSS -->
     <link rel="stylesheet" href="<?php echo public_helper('lib/bootstrap/css/bootstrap.min.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('lib/font-awesome/css/font-awesome.min.css'); ?>"/>

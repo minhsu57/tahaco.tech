@@ -12,25 +12,35 @@
                     <?php echo anchor('/admin/category', 'Cancel','class="btn btn-default btn-lg btn-sm"');?>
                 </div>
             </div>
-            <div class="form-group col-md-12 col-lg-12">
+            <div class="form-group col-md-6 col-lg-6">
                 <?php
                 echo form_label('Title','name');
-                echo form_error('name');
+                echo form_error('name','<span class="error">');
                 ?>
                 <input type="text" name="name" class="form-control" disabled value="<?php echo $item->name; ?>" title="<?php echo $item->name; ?>">
             </div>
             <div class="form-group col-md-6 col-lg-6">
-                <strong>Photo</strong>   
+                <?php
+                echo form_label('Type','level');
+                echo form_error('level','<span class="error">');
+                ?>
+                <select class="form-control" name="level">
+                    <option value="1" <?php echo set_select('level', '1', ($item->level == "1" ? TRUE : FALSE )); ?> >Category</option>
+                    <option value="0" <?php echo set_select('level', '0', ($item->level == "0" ? TRUE : FALSE )); ?> >Product</option>
+                </select>
+            </div>
+            <div class="form-group col-md-6 col-lg-6">
+                <strong>Photo</strong>
+                <?php echo form_error('content','<span class="error">'); ?>  
                 <div id="editor">
-                    <textarea class="ckeditor" name="content"><?php echo $item->content ?></textarea> 
-                    <?php echo form_error('content','<p class="error">'); ?>
+                    <textarea class="ckeditor" name="content"><?php if(set_value('content')) echo set_value('content'); else echo $item->content ?></textarea>
                 </div>
             </div>
             <div class="form-group col-md-6 col-lg-6">
-                <strong>Content</strong>   
+                <strong>Content</strong> 
+                <?php echo form_error('description','<span class="error">'); ?>  
                 <div id="editor">
-                    <textarea class="ckeditor" name="description"><?php echo $item->description ?></textarea> 
-                    <?php echo form_error('description','<p class="error">'); ?>
+                    <textarea class="ckeditor" name="description"><?php if(set_value('description')) echo set_value('description'); else echo $item->description ?></textarea>
                 </div>
             </div>
             <div class="form-group col-md-12 col-lg-12">

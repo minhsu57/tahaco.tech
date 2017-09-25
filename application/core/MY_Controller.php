@@ -3,52 +3,51 @@
 class MY_Controller extends CI_Controller
 {
     public $website;
-	protected $data = array();
-	protected $langs = array();
+    protected $data = array();
+    protected $langs = array();
     protected $default_lang;
     protected $current_lang;
-	function __construct()
-	{
-		parent::__construct();
+    function __construct()
+    {
+      parent::__construct();
 
-        $this->load->model('website_model');
-        $this->website = $this->website_model->get_row();
-        $this->data['website'] = $this->website;
+      $this->load->model('website_model');
+      $this->website = $this->website_model->get_row();
+      $this->data['website'] = $this->website;
 
-        // load 7 posts of the lastest news 
-        $news_condition['limit'] = array('7' ,'0');
-        $this->load->model('news_model');
-        $this->news = $this->news_model->get_list($news_condition);
-        $this->data['news'] = $this->news;
+        // load list data of category
+      $this->load->model('category_model'); 
+      $cate_condition['where'] = array('level' => '1');
+      
+      $this->data['categories'] = $this->category_model->get_list($cate_condition);      
 
-        // Get the default page description and title from the database
-        $this->data['page_title'] = $this->website->page_title;
-        $this->data['page_description'] = $this->website->page_title;
-		$this->data['before_head'] = '';
-		$this->data['before_body'] = '';
-$_SESSION['KCFINDER'] = array(
-    'disabled' => false
-);
+       // Get the default page description and title from the database
+      $this->data['page_title'] = $this->website->title;
+      $this->data['meta_keyword'] = $this->website->meta_keyword;
+      $this->data['meta_description'] = $this->website->meta_description;
+      $_SESSION['KCFINDER'] = array(
+        'disabled' => false
+        );
 
-	}
+  }
 
-	protected function render($the_view = NULL, $template = 'master')
-	{
-        if($template == 'json' || $this->input->is_ajax_request())
-		{
-			header('Content-Type: application/json');
-			echo json_encode($this->data);
-		}
-		elseif(is_null($template))
-		{
-			$this->load->view($the_view,$this->data);
-		}
-		else
-		{
-			$this->data['the_view_content'] = (is_null($the_view)) ? '' : $this->load->view($the_view, $this->data, TRUE);
-			$this->load->view('templates/' . $template . '_view', $this->data);
-		}
-	}
+  protected function render($the_view = NULL, $template = 'master')
+  {
+    if($template == 'json' || $this->input->is_ajax_request())
+    {
+     header('Content-Type: application/json');
+     echo json_encode($this->data);
+ }
+ elseif(is_null($template))
+ {
+     $this->load->view($the_view,$this->data);
+ }
+ else
+ {
+     $this->data['the_view_content'] = (is_null($the_view)) ? '' : $this->load->view($the_view, $this->data, TRUE);
+     $this->load->view('templates/' . $template . '_view', $this->data);
+ }
+}
 }
 
 class Admin_Controller extends MY_Controller
@@ -59,35 +58,35 @@ class Admin_Controller extends MY_Controller
 		parent::__construct();
 		$this->load->library('ion_auth');
         $this->load->library('postal');
-		$this->load->helper('url');
-		if (!$this->ion_auth->logged_in())
-		{
+        $this->load->helper('url');
+        if (!$this->ion_auth->logged_in())
+        {
             $_SESSION['redirect_to'] = current_url();
 			//redirect them to the login page
-			redirect('admin/user/login', 'refresh');
-		}
+            redirect('admin/user/login', 'refresh');
+        }
         $current_user = $this->ion_auth->user()->row();
         $this->user_id = $current_user->id;
-		$this->data['current_user'] = $current_user;
-		$this->data['current_user_menu'] = '';
-		if($this->ion_auth->in_group('admin'))
-		{
-			$this->data['current_user_menu'] = $this->load->view('templates/_parts/user_menu_admin_view.php', NULL, TRUE);
-		}
+        $this->data['current_user'] = $current_user;
+        $this->data['current_user_menu'] = '';
+        if($this->ion_auth->in_group('admin'))
+        {
+         $this->data['current_user_menu'] = $this->load->view('templates/_parts/user_menu_admin_view.php', NULL, TRUE);
+     }
 
-		$this->data['page_title'] = $this->website->page_title;
-        	$this->data['page_description'] = $this->website->page_title;
-	}
-	protected function render($the_view = NULL, $template = 'admin_master')
-	{
-		parent::render($the_view, $template);
-	}
+     $this->data['page_title'] = $this->website->title;
+     $this->data['page_description'] = $this->website->meta_description;
+ }
+ protected function render($the_view = NULL, $template = 'admin_master')
+ {
+  parent::render($the_view, $template);
+}
 }
 
 class Public_Controller extends MY_Controller
 {
     function __construct()
-	{
+    {
         parent::__construct();
         // $this->load->model('banned_model');
         // $ips = $this->banned_model->fields('ip')->set_cache('banned_ips',3600)->get_all();
@@ -110,7 +109,7 @@ class Public_Controller extends MY_Controller
         //         redirect('offline', 'refresh', 503);
         //     }
         // }
-	}
+    }
 
     protected function render($the_view = NULL, $template = 'public_master')
     {

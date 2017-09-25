@@ -1,19 +1,13 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-
 ?>
-<div class="home_page">
-	<div>
-		<!-- Slider section -->
-		<?php include "slider_view.php"; ?>
-		<!-- End slider section -->
-	</div>
+<div style="margin-top: 100px">
 	<div id="body">
 		<div class="wrap">
 			<div class="content">
 				<section >
 					<div>
-						<a href="<?php echo base_url(); ?>"><h1 class="h1-home" style="margin-bottom: 40px"><?php echo 'SẢN PHẨM'; ?></h1></a>						
+						<a href="<?php echo base_url(); ?>"><h1 class="h1-home" style="margin-bottom: 40px"><?php echo $item->name; ?></h1></a>					
 					</div>
 					<div>
 						
@@ -29,90 +23,27 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 				<div class="container">
 					<?php foreach ($products as $key => $value) { 
 						preg_match('@src="([^"]+)"@' , $value->content, $match);
-            			$image = array_pop($match); ?> 
+						$image = array_pop($match); ?> 
 						<div class="col-md-6 col-lg-4 text-center product">
 							<a href="<?php echo base_url('category/'.$value->id); ?>"><img class="img-product-home" src="<?php echo $image; ?>"></a>
 							<div class="product-name"><h3><?php echo $value->name; ?></h3></div>
 						</div>
-					<?php } ?>
-				</div>
+						<?php } ?>
+					</div>
 
-			</section>
-			<div class="clear"></div>
-			<!-- note -->
-			<section class="main-content">
-				<div class="container" >
-					<div class="grid-container parallax-content section-header-holder" style="opacity: 1;">  
-						<div class="mobile-grid-100 tablet-grid-100">
-							<header class="parallax-header pt-style-3 ">
-								<h2 class="parallax-title"><a href="<?php echo base_url('tien-ich.html'); ?>"><span><?php echo $website->title; ?></span></a></h2>
-							</header>
-							<?php echo $home_introduce->description; ?>
-						</div>
-					</div>
-				</div>
-			</section>
-			<div class="clear"></div>
-			<!-- bxs slider -->
-			<section class="testimonials-section" style="background-image:url(<?php echo public_helper('upload/images/d2bb1e_f2e26a27e2fa4184be4c43117b689fa4.jpg') ?>);height: 100% ">
-				<div class="container">
-					<div class="sec-title">
-						<h2>TIN TỨC MỚI CẬP NHẬT</h2>
-						<div class="separator small-separator"></div>
-						<div class="text"><p>Thông tin đầy đủ về <?php echo $website->website_name; ?></p></div>
-					</div>
-					<div class="testimonials-slider owl-carousel">	
-						<?php foreach ($news as $new) {
-							// get value of src img tag
-							preg_match( '@src="([^"]+)"@' , $new->image, $match);
-							$image = array_pop($match); ?>
-							<div class="item">
-								<article class="slide-item">
-									<figure class="image-box"><img src="<?php echo $image; ?>" class="img-thumb"></figure>
-									<div class="info-box">
-										<h3><a href="<?php echo base_url('tin-tuc/'.$new->id.'-'.create_slug($new->title)); ?>.html"><?php echo $new->title; ?></a></h3>
-										<p class="designation">Ngày đăng : <?php echo $new->modified_date; ?></p>
-									</div>
-									<div class="slide-text">
-										<p>“<?php echo $new->short_content; ?>”</p>
-									</div>
-								</article>
-							</div>
-							<?php } ?>	
-						</div>
-					</div>					
 				</section>
-				<!-- map -->
-				<?php $this->load->view('user/google_map_view') ?>
+				<div class="clear"></div>
+				<!-- note -->
+				<section class="main-content">
+					<div class="container" >
+						<div class="grid-container parallax-content section-header-holder" style="opacity: 1;">  
+							<div class="mobile-grid-100 tablet-grid-100">
+								<?php echo $item->description; ?>
+							</div>
+						</div>
+					</div>
+				</section>
 			</div>
 		</div>
 	</div>
 </div>
-<script type="text/javascript">
-	var owl = $('.owl-carousel');
-	owl.owlCarousel({
-		margin: 10,
-		loop: true,
-		responsiveClass:true,
-		autoplay:true,
-		autoplayTimeout:4000,
-		responsive: {
-			0: {
-				items: 1,
-				nav: true,
-				loop: true,
-			},
-			600: {
-				items: 2,
-				nav: true,
-				loop: true,
-			},
-			1000: {
-				items: 3,
-				nav: true,
-				loop: true,
-				margin: 20
-			}
-		}
-	});
-</script>

@@ -30,7 +30,7 @@
             </div>
             <div class="col-lg-3">
                 <div class="">
-                    <?php echo $website->footer_content_1; ?>
+                    <?php echo $website->footer_content_2; ?>
                 </div>  
             </div>
             <div class="col-lg-5">

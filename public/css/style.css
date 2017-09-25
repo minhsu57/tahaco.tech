@@ -225,6 +225,7 @@ section img{
     color: #2098d1;
     font-size: 15px;
     font-family: "Roboto Condensed", arial !important;
+    text-transform: uppercase;
 }
 .navbar {
     position: fixed;
@@ -244,6 +245,7 @@ section img{
     font-family: "Roboto Condensed", arial !important;
     font-weight: bold;
     font-size: 30px;
+    text-transform: uppercase;
 }
 .flip-box-wrap {
     display: block;

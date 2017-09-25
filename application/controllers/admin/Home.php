@@ -16,46 +16,65 @@ class Home extends Admin_Controller
         $this->load->model('website_model');
         $this->load->helper(array('form', 'url'));
         $this->load->library('form_validation');
+        $this->lang->load('form_validation', 'english');
         date_default_timezone_set("Asia/Ho_Chi_Minh");
     }
 
     public function index()
     {
         $this->data['item'] = $this->website_model->get_row();
-
-        $this->form_validation->set_rules('title', 'Tiêu đề chưa hợp lệ', 'trim|required');
+        $this->form_validation->set_rules('website_name', 'Website name', 'trim|required');
+        $this->form_validation->set_rules('title', 'Title', 'trim|required');
+        $this->form_validation->set_rules('footer_content_1', 'Footer content 01', 'trim|required');
+        $this->form_validation->set_rules('footer_content_2', 'Footer content 02', 'trim|required');
         if ($this->form_validation->run() == FALSE) {
-            
+            $this->render('admin/home/index_view');
         }
         else {
             if($this->input->post('submit')){
                 $id = $this->input->post('id');
+                $website_name = $this->input->post('website_name');
                 $title = $this->input->post('title');
-                $page_title = $this->input->post('page_title');
+                $footer_content_1 = $this->input->post('footer_content_1');
+                $footer_content_2 = $this->input->post('footer_content_2');
                 $facebook = $this->input->post('facebook');
-                $google = $this->input->post('google');
+                $google_plus = $this->input->post('google_plus');
                 $phone = $this->input->post('phone');
                 $address = $this->input->post('address');
+                $google_map = $this->input->post('google_map');
                 $hotline = $this->input->post('hotline');
-                $gallery = $this->input->post('gallery');
-                $sale = $this->input->post('sale');
                 $youtube = $this->input->post('youtube');
-                $support = $this->input->post('support');
-                $contact_email = $this->input->post('contact_email');
+                $email = $this->input->post('email');
+                $ad_video = $this->input->post('ad_video');
                 $admin_email = $this->input->post('admin_email');
                 $meta_keyword = $this->input->post('meta_keyword');
                 $meta_description = $this->input->post('meta_description');
-                $footer_link = $this->input->post('footer_link');
-                $modified_date = $this->input->post('modified_date');
-                $modified_by = $this->input->post('modified_by');
-                $update_data = array('title' => $title, 'page_title' => $page_title, 'facebook' => $facebook, 'google' => $google, 'phone' => $phone, 'address' => $address, 'hotline' => $hotline, 'gallery' => $gallery, 'sale' => $sale, 'youtube' => $youtube, 'support' => $support, 'contact_email' => $contact_email, 'admin_email' => $admin_email, 'meta_keyword' => $meta_keyword, 'meta_description' => $meta_description, 'footer_link' => $footer_link, 'modified_date'=>date('Y-m-d'), 'modified_by'=>$modified_by);
+                $favicon = $this->input->post('favicon');
+                $update_data = array('website_name' => $website_name,
+                    'title' => $title,
+                    'footer_content_1' => $footer_content_1,
+                    'footer_content_2' => $footer_content_2,
+                    'facebook' => $facebook,
+                    'google_plus' => $google_plus,
+                    'phone' => $phone,
+                    'address' => $address,
+                    'google_map' => $google_map,
+                    'hotline' => $hotline,
+                    'youtube' => $youtube,
+                    'email' => $email,
+                    'ad_video' => $ad_video,
+                    'admin_email' => $admin_email,
+                    'meta_keyword' => $meta_keyword,
+                    'meta_description' => $meta_description,
+                    'favicon' => $favicon,
+                    'modified_date'=>date('Y-m-d'));
                 if(!$this->website_model->update($id, $update_data))
                 {             
-                    $this->postal->add('Chỉnh sửa thất bại !','error');
-                }else $this->postal->add('Chỉnh sửa thành công.','success');
+                    $this->postal->add('Edit fail !','error');
+                }else $this->postal->add('Edit successfully.','success');
                 redirect('admin/home');
             }
         }
-        $this->render('admin/home/index_view'); 
+        
     }
 }

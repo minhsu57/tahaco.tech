@@ -27,28 +27,14 @@ if($this->ion_auth->logged_in()) {
             </div>
             <div id="navbar" class="collapse navbar-collapse">
                 <ul class="nav navbar-nav">
-                    <!-- <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Menus <span class="caret"></span></a>
-                            <ul class="dropdown-menu" role="menu">
-                                <li><a href="<?php echo site_url('admin/product');?>">Quản lý sản phẩm</a></li>
-                                <li><a href="<?php echo site_url('admin/factory');?>">Quản lý nhà máy</a></li>
-                                <li><a href="<?php echo site_url('admin/quarry');?>">Quản lý mỏ đá</a></li>
-                                <li><a href="<?php echo site_url('admin/works');?>">Quản lý công trình</a></li>
-                            </ul>
-                    </li> -->
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Trang Chủ <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">MENU <span class="caret"></span></a>
                         <ul class="dropdown-menu" role="menu">
                             <li><?php echo anchor('admin/slider','Slider');?></li>
-                            <li><?php echo anchor('admin/category','Category');?></li>
-                            <li><?php echo anchor('admin/home','Thông tin chung website');?></li>
-                            <li><?php echo anchor('admin/home_info/area1','Nội dung trang chủ 1');?></li>
-                            <li><?php echo anchor('admin/home_info/area2','Nội dung trang chủ 2');?></li>
-                            <li><?php echo anchor('admin/home_info/area3','Nội dung trang chủ 3');?></li>
-                            <li><?php echo anchor('admin/home_info/area4','Nội dung trang chủ 4');?></li>
+                            <li><?php echo anchor('admin/category','Category');?></li>                            
                         </ul>
                     </li>
-                    
+                    <li><?php echo anchor('admin/home','COMMON INFO');?></li>
                 </ul>
                 <ul class="nav navbar-nav navbar-right">
                     <li><?php echo anchor('admin/news/index','NEWS');?></li>

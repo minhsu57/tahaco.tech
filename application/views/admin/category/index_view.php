@@ -18,6 +18,7 @@
             echo '<thead>';
             echo '<tr>';
             echo '<th>Category Name</th>';
+            echo '<th>Type</th>';
             echo '<th>Modify Date</th>';
             echo '<th style="width: 90px !important">Actions</th>';
             echo '</tr>';
@@ -29,7 +30,8 @@
                 foreach($items as $item)
                 {
                     echo '<tr>';
-                    echo '<td>'.$item->name.'</td>';                    
+                    echo '<td>'.$item->name.'</td>';
+                    if($item->level == 0) echo '<td>Product</td>'; else echo '<td></td>';
                     echo '<td>'.$item->modified_date.'</td>';
                     echo '<td>';
                     echo '<a href="'.base_url("admin/").'category/edit/'.$item->id.'" style="color:#fff"><button class="btn btn-sm btn-warning"><li class="fa fa-pencil"></li></button></a> ';

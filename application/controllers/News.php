@@ -11,6 +11,11 @@ class News extends Public_Controller {
         $this->load->model('category_model');
        	$this->load->model('news_model');
         $this->load->library('pagination');
+
+        // get list news for sidebar
+        $input_new_news['order'] = array('modified_date', 'desc');
+        $input_new_news['limit'] = array(7, 0);
+        $this->data['news'] = $this->news_model->get_list($input_new_news);
     }
     
 	public function index()

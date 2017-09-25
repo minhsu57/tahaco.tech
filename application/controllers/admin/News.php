@@ -49,10 +49,10 @@ class News extends Admin_Controller
     public function create()
     {        
         if($this->input->post('submit')){
-            $this->form_validation->set_message('required', $this->lang->line('required'));
-            $this->form_validation->set_rules('title', 'lang:title', 'required');
-            $this->form_validation->set_rules('content', 'lang:content', 'required');
-            $this->form_validation->set_rules('short_content', 'lang:short_content', 'required');
+            //$this->form_validation->set_message('required', $this->lang->line('required'));
+            $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('content', 'Content', 'required');
+            $this->form_validation->set_rules('short_content', 'Short Content', 'required');
             if ($this->form_validation->run() == FALSE)
             {
                  $this->render('admin/news/create_view');
@@ -82,10 +82,10 @@ class News extends Admin_Controller
         $input['where'] = array('id' => $item_id);
         $this->data['item'] = $this->news_model->get_row($input);        
         if($this->input->post('submit')){
-            $this->form_validation->set_message('required', $this->lang->line('required'));
-            $this->form_validation->set_rules('title', 'lang:title', 'required');
-            $this->form_validation->set_rules('content', 'lang:content', 'required');
-            $this->form_validation->set_rules('short_content', 'lang:short_content', 'required');
+            //$this->form_validation->set_message('required', $this->lang->line('required'));
+            $this->form_validation->set_rules('title', 'Title', 'required');
+            $this->form_validation->set_rules('content', 'Content', 'required');
+            $this->form_validation->set_rules('short_content', 'Short Content', 'required');
             if ($this->form_validation->run() == FALSE)
             {
                  $this->render('admin/news/edit_view');
