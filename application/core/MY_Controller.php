@@ -25,6 +25,8 @@ class MY_Controller extends CI_Controller
       $this->data['page_title'] = $this->website->title;
       $this->data['meta_keyword'] = $this->website->meta_keyword;
       $this->data['meta_description'] = $this->website->meta_description;
+      preg_match('@src="([^"]+)"@' , $this->website->favicon, $match);
+      $this->data['website']->favicon = array_pop($match);
       $_SESSION['KCFINDER'] = array(
         'disabled' => false
         );

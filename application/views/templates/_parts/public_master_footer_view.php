@@ -19,21 +19,21 @@
 </div>
 </div>
 <!-- end modal -->
-<div id="footer_bottom" class="footer-bottom"  itemscope itemtype ="http://schema.org/Movie">
+<div id="footer_bottom" class="footer-bottom">
     <div class="container">
        <div class="">
         <div class="">
-            <div class="col-lg-4">
+            <div class="col-md-4 col-lg-4">
                 <div class="">
                     <?php echo $website->footer_content_1; ?>
                 </div>  
             </div>
-            <div class="col-lg-3">
+            <div class="col-md-3 col-lg-3">
                 <div class="">
                     <?php echo $website->footer_content_2; ?>
                 </div>  
             </div>
-            <div class="col-lg-5">
+            <div class="col-md-5 col-lg-5">
                 <div class="">
                     <p><strong style="font-size: 20PX;">FACEBOOK</strong></p>
                     <div class="fb-page" data-href="<?php echo $website->facebook; ?>" data-small-header="false" data-adapt-container-width="true"

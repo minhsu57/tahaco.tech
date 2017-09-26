@@ -1,9 +1,13 @@
+
 @media only screen and (max-width: 720px) {
     #menu-footer-menu li{
         list-style: none;
     }
     .container {
         width: 100% !important;
+    }
+    #header-1 .content .menu-item {
+        margin: 10px 0px;
     }
 }
 @media (max-width: 1201px){
@@ -24,8 +28,9 @@
     .container {
         width: 100% !important;
     }
-    
-     
+    #footer_bottom{
+        text-align: center !important;
+    }     
      .navbar-header {
         float: none;
     }
@@ -93,7 +98,6 @@ body{
     position: absolute;
     width: 30px;
     height: 30px;
-    background: url(https://css-dashboard.subiz.com/widget/img/loading-transparent.gif) no-repeat;
     top: 50%;
     margin-top: -15px;
     left: 50%;
@@ -209,9 +213,6 @@ section img{
 }
 .fa-1-5 {
     font-size: 1.5em !important;
-}
-#footer_bottom{
-    background: #337ab7;
 }
 /*navbar*/
 .navbar-brand {
@@ -586,16 +587,6 @@ dfn, cite, em, i, address, q, samp, var {
     color: #23282a;
     text-transform: uppercase;
 }
-/*.faded-section:before {
-    content: '';
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    background: rgba(255,255,255,0.85);
-    z-index: 0;
-}*/
 .faded-section {
     position: relative;
     padding: 70px 0px 0px;
@@ -709,6 +700,7 @@ div.wpcf7 .screen-reader-response {
 #footer_bottom {
     color: #fff !important;
     padding-top: 15px;
+    background: #337ab7;
 }
 #footer_bottom a, #footer_bottom a:hover{
     color: #fff !important;

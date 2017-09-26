@@ -16,11 +16,15 @@
     <meta name="robots" content="noodp,index,follow" />
     <meta name='revisit-after' content='1 days' />
     <!-- facebook share content -->
-    <meta property="og:url"                content="http://www.nytimes.com/2015/02/19/arts/international/when-great-minds-dont-think-alike.html" />
-    <meta property="og:type"               content="article" />
-    <meta property="og:title"              content="<?php echo $website->title; ?>" />
-    <meta property="og:description"        content="<?php echo $website->meta_description; ?>" />
-    <meta property="og:image"              content="<?php if(isset($website->image)) echo $website->image; else echo public_helper('upload/images/tahaco-banner-trang-chu-4.jpg'); ?>" />
+    <meta property="og:locale" content="vi_VN">
+    <meta property="og:type"               content="website" />       
+    <meta property="og:title"         content="<?php echo $website->title; ?>" />
+    <meta property="og:description"   content="<?php echo $website->meta_description; ?>" />
+    <meta property="og:url"           content="<?php echo base_url().$_SERVER['REQUEST_URI']; ?>" />
+
+    <meta name="twitter:card"         content="summary">
+    <meta name="twitter:description"  content="<?php echo $website->meta_description; ?>">
+    <meta name="twitter:title"        content="<?php echo $website->title; ?>">
 
     <title><?php echo $website->title; ?></title>
     <!-- CSS -->
@@ -28,7 +32,8 @@
     <link rel="stylesheet" href="<?php echo public_helper('lib/font-awesome/css/font-awesome.min.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('owlcarousel/owl.carousel.min.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('owlcarousel/owl.theme.green.css'); ?>"/>
-    <link rel="stylesheet" href="<?php echo public_helper('css/bootstrap-glyphicons.css'); ?>"/>
+    <!-- <link rel="stylesheet" href="<?php echo public_helper('lib/bootstrap/css/bootstrap-glyphicons.css'); ?>"/> -->
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css" rel="stylesheet">
     <link rel="stylesheet" href="<?php echo public_helper('css/animate.css'); ?>"/>
     <link rel="stylesheet" href="<?php echo public_helper('css/style.css'); ?>"/>
 

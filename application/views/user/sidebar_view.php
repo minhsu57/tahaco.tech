@@ -7,7 +7,7 @@
 	<div class="row row-article">
 		<div class="col-xs-4 col-md-2 col-lg-4">
 			<div class="news_image  hidden-md">
-				<a href="<?php echo base_url('tin-tuc/'.$item->id.'-'.create_slug($item->title)); ?>"><img src="<?php echo $image; ?>" class="img-thumbnail"></a>
+				<a href="<?php echo base_url('tin-tuc/'.$item->id.'-'.create_slug($item->title)); ?>"><img src="<?php echo $image; ?>" class="img-thumbnail" alt="<?php echo $item->title; ?>"></a>
 			</div>
 			<div class="visible-md">-</div>			
 		</div>

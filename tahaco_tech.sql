@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Sep 25, 2017 at 11:27 AM
+-- Generation Time: Sep 26, 2017 at 11:25 AM
 -- Server version: 10.1.13-MariaDB
 -- PHP Version: 5.6.21
 
@@ -19,18 +19,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `tahaco.tech`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `app_routes`
---
-
-CREATE TABLE `app_routes` (
-  `id` int(11) NOT NULL,
-  `slug` varchar(192) NOT NULL,
-  `controller` varchar(64) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -90,7 +78,7 @@ INSERT INTO `category` (`id`, `name`, `description`, `content`, `content2`, `con
 ('filter-system', 'FILTER SYSTEM', '<h1><span style="color:#2980b9">FILTER SYSTEM</span></h1>\r\n', '<p><img alt="" src="/public/upload/images/product05.PNG" style="height:204px; width:219px" /></p>\r\n', NULL, NULL, NULL, NULL, NULL, 0, '', '', '2017-09-24 22:44:02'),
 ('gioi-thieu', 'Giới thiệu', '<p><span style="color:#9b59b6"><span style="font-size:22px">Đ&acirc;y l&agrave; giới thiệu</span></span></p>\r\n', '', '', '', NULL, NULL, '', -1, NULL, NULL, '2017-09-04 03:01:04'),
 ('home', 'Home', '', NULL, NULL, NULL, NULL, NULL, NULL, -1, 'Thi thử ITELS, khóa học luyện nói tiếng anh, luyện nói nhóm 4-5 bạn, luyện nói nhóm 8 bạn, luyện thi ielts', 'Thi thử ITELS, khóa học luyện nói tiếng anh, luyện nói nhóm 4-5 bạn, luyện nói nhóm 8 bạn, luyện thi ielts', '2017-09-15 19:21:21'),
-('home-page-introduce', 'Home page introduce', '<h3 style="color:#aaaaaa; font-style:italic; text-align:center"><img alt="" src="/public/upload/images/d2bb1e_ea74e810e9e0456eb89f6afe51fda468-mv2.png" /></h3>', '<p><img alt="" src="/public/upload/images/product03.PNG" style="height:206px; width:222px" /></p>', NULL, NULL, NULL, NULL, NULL, -1, '', '', '2017-09-25 16:16:34'),
+('home-page-introduce', 'Home page introduce', '<h3 style="color:#aaaaaa; font-style:italic; text-align:center"><img alt="Nông nghiệp tahaco" src="/public/upload/images/d2bb1e_ea74e810e9e0456eb89f6afe51fda468-mv2.png" /></h3>', '<p><img alt="" src="/public/upload/images/product03.PNG" style="height:206px; width:222px" /></p>', NULL, NULL, NULL, NULL, NULL, -1, '', '', '2017-09-26 07:44:11'),
 ('ky-thuat', 'Kỹ thuật', '<h1><span style="color:#2980b9">KỸ THUẬT</span></h1>', '<p><img alt="" src="/public/upload/images/d2bb1e_f10767a2b6cd433ea802a458b0875d55.jpg" /></p>', NULL, NULL, NULL, NULL, NULL, 1, '', '', '2017-09-25 11:04:45'),
 ('lien-he', 'Liên hệ', '<p><span style="color:#2980b9"><span style="font-size:18px"><span style="font-family:Times New Roman,serif"><span style="font-family:Calibri,serif">Nếu bạn c&oacute; thắc mắc về chương tr&igrave;nh học xin li&ecirc;n hệ qua:</span></span></span></span></p>\r\n\r\n<p><span style="font-size:18px"><span style="color:#c0392b"><strong>TAHACO.TECH</strong></span></span></p>\r\n\r\n<p><span style="font-family:Times New Roman,serif"><span style="font-size:medium"><span style="font-family:Calibri,serif">Facebook: <a href="https://www.facebook.com/nongnghieptahaco" target="_blank"><span style="color:#2980b9">https://www.facebook.com/nongnghieptahaco</span></a></span></span></span></p>\r\n\r\n<p><span style="font-family:Times New Roman,serif"><span style="font-size:medium"><span style="font-family:Calibri,serif">Tel: </span></span></span><span style="color:#2980b9"><strong>097 141 91 81</strong></span></p>\r\n\r\n<p><span style="font-family:Times New Roman,serif"><span style="font-size:medium"><span style="font-family:Calibri,serif">Hotline: </span></span></span><span style="color:#2980b9"><strong>097 141 91 81</strong></span></p>\r\n\r\n<p><span style="font-family:Times New Roman,serif"><span style="font-size:medium"><span style="font-family:Calibri,serif">Địa chỉ: </span></span></span><span style="color:#27ae60"><strong>98 Th&ocirc;n 1, Đắk Buk So, Tuy Đức, Đak N&ocirc;ng</strong></span></p>\r\n\r\n<p><span style="font-family:Times New Roman,serif"><span style="font-size:medium"><span style="font-family:Calibri,serif">Giờ l&agrave;m việc: <span style="color:#f39c12"><strong>Thứ 2 &ndash; Chủ nhật (7:00 &ndash; 21:00)</strong></span></span></span></span></p>\r\n\r\n<p><span style="color:#000000">Hoặc gửi th&ocirc;ng tin cho TAHACO.TECH để nhận được những hỗ trợ tốt nhất</span></p>', '<p><img alt="" src="/public/upload/images/logo.jpg" style="height:280px; width:280px" /></p>', NULL, NULL, NULL, NULL, NULL, -1, 'ehouse coffee, luyện nói tiếng anh', 'ehouse coffee, luyện nói tiếng anh', '2017-09-25 16:00:58'),
 ('login', 'login', '', NULL, NULL, NULL, NULL, NULL, NULL, -1, 'ehouse coffee, luyện nói tiếng anh', 'ehouse coffee, luyện nói tiếng anh', '2017-09-15 19:21:02'),
@@ -112,53 +100,6 @@ CREATE TABLE `common_info` (
   `description` varchar(300) NOT NULL,
   `date` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
--- --------------------------------------------------------
-
---
--- Table structure for table `factory`
---
-
-CREATE TABLE `factory` (
-  `id` int(11) NOT NULL,
-  `name` text NOT NULL,
-  `url` text NOT NULL,
-  `status` tinyint(1) NOT NULL,
-  `created_date` datetime NOT NULL,
-  `created_by` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `factory`
---
-
-INSERT INTO `factory` (`id`, `name`, `url`, `status`, `created_date`, `created_by`) VALUES
-(2, 'img_5981.jpg', 'img_5981.jpg', 1, '0000-00-00 00:00:00', ''),
-(3, 'img-5795.jpg', 'img_5975.jpg', 1, '0000-00-00 00:00:00', ''),
-(4, 'img_45591.jpg', 'img_45591.jpg', 1, '2017-04-01 06:58:01', '');
-
--- --------------------------------------------------------
-
---
--- Table structure for table `factory_translation`
---
-
-CREATE TABLE `factory_translation` (
-  `id` int(11) NOT NULL,
-  `factory_id` int(11) NOT NULL,
-  `language_slug` varchar(2) NOT NULL,
-  `name` varchar(30) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `factory_translation`
---
-
-INSERT INTO `factory_translation` (`id`, `factory_id`, `language_slug`, `name`) VALUES
-(1, 1, 'vi', 'Nhà máy số 1'),
-(2, 1, 'en', 'Factory No 1'),
-(3, 2, 'vi', 'Nhà máy 2'),
-(4, 2, 'en', 'Factory No 2');
 
 -- --------------------------------------------------------
 
@@ -290,35 +231,6 @@ INSERT INTO `news` (`id`, `title`, `short_content`, `content`, `keyword`, `meta_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `posts`
---
-
-CREATE TABLE `posts` (
-  `id` int(11) NOT NULL,
-  `title` varchar(255) CHARACTER SET utf8 NOT NULL,
-  `type` varchar(50) NOT NULL,
-  `content` text CHARACTER SET utf8 NOT NULL,
-  `short_content` text CHARACTER SET utf8,
-  `seo` varchar(255) DEFAULT NULL,
-  `created_date` date DEFAULT NULL,
-  `created_by` varchar(255) DEFAULT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
-
---
--- Dumping data for table `posts`
---
-
-INSERT INTO `posts` (`id`, `title`, `type`, `content`, `short_content`, `seo`, `created_date`, `created_by`) VALUES
-(1, 'VỊ TRÍ ” VÀNG” KẾT NỐI NHANH ĐẾN TRUNG TÂM THÀNH PHỐ HCM', 'vitri', '<p><cite><span style="color:#c0392b"><span style="font-size:28px"><img alt="" src="/public/kcfinder/upload/images/hinh-anh-thuc-te-can-ho-homyland-2-quan-2-20(1).jpg" style="height:500px; width:1160px" />Vị trí căn h&ocirc;̣ H&agrave; Đ&ocirc; RiverSide Qu&acirc;̣n 10</span></span></cite></p>\r\n\r\n<p><img alt="căn hộ hà đô riverside" src="/public/kcfinder/upload/images/can_ho_ha_do_riverside.jpg" style="height:541px; width:1024px" /></p>\r\n', '', '', '2017-04-12', ''),
-(2, 'Tiện ích', 'tienich', '<p><img alt="" src="/public/kcfinder/upload/images/hinh-anh-thuc-te-can-ho-homyland-2-quan-2-20.jpg" style="height:440px; width:355px" /></p>\r\n', '', '', '2017-04-07', ''),
-(3, 'Mặt bằng', 'matbang', '<p><img alt="" src="/public/kcfinder/upload/images/matbanghadoriverside.jpg" style="height:1205px; width:1600px" /></p>\r\n', '', '', '2017-04-12', ''),
-(4, 'Căn hộ mẫu', 'canhomau', '<p><img alt="" src="/public/kcfinder/upload/images/nhamau_11.png" style="height:469px; width:900px" /></p>\r\n', NULL, NULL, '2017-04-07', NULL),
-(5, 'Thanh toán', 'thanhtoan', '<p>sadf</p>\r\n', NULL, NULL, '2017-04-04', NULL),
-(6, 'Liên Hệ', 'lienhe', '<p>Mọi th&ocirc;ng tin chi tiết về dự &aacute;n&nbsp;Căn Hộ <span style="color:#c0392b"><em><strong>H&agrave; Đ&ocirc; RiverSide</strong></em></span>&nbsp; Qu&yacute; Kh&aacute;ch H&agrave;ng vui l&ograve;ng li&ecirc;n hệ trực tiếp để nhận th&ocirc;ng tin ch&iacute;nh x&aacute;c nhất!</p>\r\n\r\n<p><strong>Hotline:</strong>&nbsp;<strong>0911.xxx xxxx</strong><br />\r\n<strong>Email:</strong>&nbsp;<a href="mailto:canhohomyland03@gmail.com">acbd@gmail.com</a><br />\r\n<strong>Website:</strong>&nbsp;<a href="http://hadoriverside.org"><em>www.hadoriverside.org</em></a></p>\r\n\r\n<p><img alt="" src="/hadoriverside/public/kcfinder/upload/images/logo.png" style="height:48px; width:210px" /></p>\r\n\r\n<p>Địa chỉ dự &aacute;n: Số 219 Đường số 05, Phường.B&igrave;nh Hưng H&ograve;a, B&igrave;nh T&acirc;n</p>\r\n\r\n<p>Ph&ograve;ng giao dịch chủ đầu tư: 327 Đường số 05, Phường B&igrave;nh Hưng H&ograve;a, Q.B&igrave;nh T&acirc;n</p>\r\n\r\n<p>Trụ sở B&igrave;nh Thạnh: 54A X&ocirc; Viết Nghệ Tĩnh, P.19, Q.B&igrave;nh Thạnh</p>\r\n\r\n<p>C&ocirc;ng ty cổ phần đầu tư Khương Thịnh h&acirc;n hạnh l&agrave; đơn vị ph&acirc;n phối độc quyền căn hộ H&agrave; Đ&ocirc; Raiver Si =))</p>', NULL, NULL, '2017-04-06', NULL);
-
--- --------------------------------------------------------
-
---
 -- Table structure for table `slider`
 --
 
@@ -373,7 +285,7 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `ip_address`, `username`, `password`, `salt`, `email`, `activation_code`, `forgotten_password_code`, `forgotten_password_time`, `remember_code`, `created_on`, `last_login`, `active`, `first_name`, `last_name`, `company`, `phone`) VALUES
-(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1506325250, 1, 'Admin', 'istrator', 'ADMIN', '1'),
+(1, '127.0.0.1', 'administrator', '$2a$06$WlemzmFke/8WR4CYUF8AfeJ3spy721g9wbglozzS1wZ/ZEZJLwF6W', '', 'admin@admin.com', '', NULL, NULL, NULL, 1268889823, 1506386279, 1, 'Admin', 'istrator', 'ADMIN', '1'),
 (2, '172.21.6.196', 'minhsu', '$2y$08$phcuMU8NslJcMko/DYfjPOWR6yoYbqowHo56WZxkaHBeZYxENcKei', NULL, 'minhsu57@gmail.com', NULL, NULL, NULL, NULL, 1490858515, 1506216532, 1, 'lê', 'minh sự', 'pouchen việt nam', '0936777170'),
 (3, '::1', 'hoangmap', '$2y$08$tzd1Fpozj8E.ONtfRYgcGexo5Pgs7ZvRqcaDokQy1y5MiRdc2SPd2', NULL, 'hoangmap@gmail.com', NULL, NULL, NULL, 'iCT7qF6F4VB1HAwnU2q5we', 1491460663, 1494227306, 1, 'Lê', 'Hoàng', 'chưa pik', '093947575');
 
@@ -435,17 +347,11 @@ CREATE TABLE `website` (
 --
 
 INSERT INTO `website` (`id`, `website_name`, `title`, `footer_content_1`, `footer_content_2`, `facebook`, `google_plus`, `phone`, `address`, `google_map`, `hotline`, `youtube`, `email`, `ad_video`, `status`, `admin_email`, `meta_keyword`, `meta_description`, `favicon`, `contact_email`, `modified_by`, `modified_date`) VALUES
-(2, 'TAHACO.TECH', 'Nông nghiệp TAHACO', '<p><span style="font-size:20px"><strong>TH&Ocirc;NG TIN LI&Ecirc;N HỆ</strong></span></p>\r\n\r\n<p><strong>Địa chỉ :&nbsp;</strong>98 Th&ocirc;n 1, Đắk Buk So, Tuy Đức, Đak N&ocirc;ng</p>\r\n\r\n<p><strong>Điện thoại</strong> :&nbsp;097 141 91 81</p>\r\n\r\n<p><strong>Email :&nbsp;ntvu.bmp@gmail.com</strong></p>\r\n\r\n<p>&nbsp;</p>', '<p><span style="font-size:20px"><strong>TH&Ocirc;NG TIN</strong></span></p>\r\n\r\n<div class="menu-footer-menu-container">\r\n<ul>\r\n	<li><a href="http://tahaco.tech">N&Ocirc;NG NGHIỆP TAHACO</a></li>\r\n	<li><a href="http://tahaco.tech/san-pham">Sản phẩm</a></li>\r\n	<li><a href="http://tahaco.tech/lien-he">Li&ecirc;n hệ</a></li>\r\n	<li><a href="http://tahaco.tech/tin-tuc">Tin tức</a></li>\r\n</ul>\r\n</div>', 'https://www.facebook.com/pg/nongnghieptahaco', 'https://plus.google.com/105439840244004612792', '0971.41.91.81', '98 Thôn 1, Đắk Buk So, Tuy Đức, Đak Nông', '10.789931, 106.693402', '0971.41.91.81', 'https://www.youtube.com', 'ntvu.bmp@gmail.com', '<p><strong>VIDEO</strong></p>\r\n\r\n<p><iframe frameborder="0" scrolling="no" src="https://www.youtube.com/embed/CooZ16jSflQ"></iframe></p>\r\n\r\n<p><strong>KEYWORD</strong></p>\r\n\r\n<p><span style="font-size:16px"><a href="http://tahaco.tech"><span style="color:#c0392b">Hệ thống tưới tự động</span></a>, <a href="http://tahaco.tech"><span style="color:#27ae60">tưới nhỏ giọt</span></a>, <a href="http://tahaco.tech"><span style="color:#8e44ad">n&ocirc;ng nghiệp</span></a></span></p>\r\n', 1, 'ntvu.bmp@gmail.com', 'Hệ thống tưới tự động, tưới nhỏ giọt, nông nghiệp', 'Hệ thống tưới tự động, tưới nhỏ giọt, nông nghiệp', '', 'avenir.ro@gmail.com', '', '2017-09-25 00:00:00');
+(2, 'TAHACO.TECH', 'Nông nghiệp TAHACO', '<p><span style="font-size:20px"><strong>TH&Ocirc;NG TIN LI&Ecirc;N HỆ</strong></span></p>\r\n\r\n<p><strong>Địa chỉ :&nbsp;</strong>98 Th&ocirc;n 1, Đắk Buk So, Tuy Đức, Đak N&ocirc;ng</p>\r\n\r\n<p><strong>Điện thoại</strong> :&nbsp;097 141 91 81</p>\r\n\r\n<p><strong>Email :&nbsp;ntvu.bmp@gmail.com</strong></p>\r\n\r\n<p>&nbsp;</p>', '<p><span style="font-size:20px"><strong>TH&Ocirc;NG TIN</strong></span></p>\r\n\r\n<div class="menu-footer-menu-container">\r\n<ul>\r\n	<li><a href="http://tahaco.tech">N&Ocirc;NG NGHIỆP TAHACO</a></li>\r\n	<li><a href="http://tahaco.tech/san-pham">Sản phẩm</a></li>\r\n	<li><a href="http://tahaco.tech/lien-he">Li&ecirc;n hệ</a></li>\r\n	<li><a href="http://tahaco.tech/tin-tuc">Tin tức</a></li>\r\n</ul>\r\n</div>', 'https://www.facebook.com/pg/nongnghieptahaco', 'https://plus.google.com/105439840244004612792', '0971.41.91.81', '98 Thôn 1, Đắk Buk So, Tuy Đức, Đak Nông', '10.789931, 106.693402', '0971.41.91.81', 'https://www.youtube.com', 'ntvu.bmp@gmail.com', '<p><strong>VIDEO</strong></p>\r\n\r\n<p><iframe frameborder="0" scrolling="no" src="https://www.youtube.com/embed/CooZ16jSflQ"></iframe></p>\r\n\r\n<p><strong>KEYWORD</strong></p>\r\n\r\n<p><span style="font-size:16px"><a href="http://tahaco.tech"><span style="color:#c0392b">Hệ thống tưới tự động</span></a>, <a href="http://tahaco.tech"><span style="color:#27ae60">tưới nhỏ giọt</span></a>, <a href="http://tahaco.tech"><span style="color:#8e44ad">n&ocirc;ng nghiệp</span></a></span></p>\r\n', 1, 'ntvu.bmp@gmail.com', 'Hệ thống tưới tự động, tưới nhỏ giọt, nông nghiệp', 'Hệ thống tưới tự động, tưới nhỏ giọt, nông nghiệp', '<p><img alt="" src="/public/upload/images/logo.jpg" style="height:280px; width:280px" /></p>\r\n', 'avenir.ro@gmail.com', '', '2017-09-26 00:00:00');
 
 --
 -- Indexes for dumped tables
 --
-
---
--- Indexes for table `app_routes`
---
-ALTER TABLE `app_routes`
-  ADD PRIMARY KEY (`id`);
 
 --
 -- Indexes for table `banned`
@@ -463,18 +369,6 @@ ALTER TABLE `category`
 -- Indexes for table `common_info`
 --
 ALTER TABLE `common_info`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `factory`
---
-ALTER TABLE `factory`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `factory_translation`
---
-ALTER TABLE `factory_translation`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -505,12 +399,6 @@ ALTER TABLE `login_attempts`
 -- Indexes for table `news`
 --
 ALTER TABLE `news`
-  ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `posts`
---
-ALTER TABLE `posts`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -545,11 +433,6 @@ ALTER TABLE `website`
 --
 
 --
--- AUTO_INCREMENT for table `app_routes`
---
-ALTER TABLE `app_routes`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
 -- AUTO_INCREMENT for table `banned`
 --
 ALTER TABLE `banned`
@@ -559,16 +442,6 @@ ALTER TABLE `banned`
 --
 ALTER TABLE `common_info`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
---
--- AUTO_INCREMENT for table `factory`
---
-ALTER TABLE `factory`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
---
--- AUTO_INCREMENT for table `factory_translation`
---
-ALTER TABLE `factory_translation`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 --
 -- AUTO_INCREMENT for table `groups`
 --
@@ -594,11 +467,6 @@ ALTER TABLE `login_attempts`
 --
 ALTER TABLE `news`
   MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
---
--- AUTO_INCREMENT for table `posts`
---
-ALTER TABLE `posts`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 --
 -- AUTO_INCREMENT for table `slider`
 --
