@@ -25,8 +25,12 @@
                 echo form_error('level','<span class="error">');
                 ?>
                 <select class="form-control" name="level">
-                    <option value="1" <?php echo set_select('level', '1', ($item->level == "1" ? TRUE : FALSE )); ?> >Category</option>
-                    <option value="0" <?php echo set_select('level', '0', ($item->level == "0" ? TRUE : FALSE )); ?> >Product</option>
+                    <?php if($item->level == "-1"){ ?>
+                        <option value="-1">Root</option>
+                    <?php }else{ ?>
+                        <option value="1" <?php echo set_select('level', '1', ($item->level == "1" ? TRUE : FALSE )); ?> >Category</option>
+                        <option value="0" <?php echo set_select('level', '0', ($item->level == "0" ? TRUE : FALSE )); ?> >Product</option>
+                    <?php } ?>
                 </select>
             </div>
             <div class="form-group col-md-6 col-lg-6">

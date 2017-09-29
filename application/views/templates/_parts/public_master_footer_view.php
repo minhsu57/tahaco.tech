@@ -28,12 +28,12 @@
                     <?php echo $website->footer_content_1; ?>
                 </div>  
             </div>
-            <div class="col-md-3 col-lg-3">
+            <div class="col-md-4 col-lg-4">
                 <div class="">
                     <?php echo $website->footer_content_2; ?>
                 </div>  
             </div>
-            <div class="col-md-5 col-lg-5">
+            <div class="col-md-4 col-lg-4">
                 <div class="">
                     <p><strong style="font-size: 20PX;">FACEBOOK</strong></p>
                     <div class="fb-page" data-href="<?php echo $website->facebook; ?>" data-small-header="false" data-adapt-container-width="true"
